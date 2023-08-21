@@ -15,7 +15,7 @@ const Search = () => {
         event.preventDefault();
         searchkey = ''
         searchkey = (event.target.keywordsearch.value).toLowerCase()
-        const filetered = company.filter(item => item.sercive_name == searchkey)
+        const filetered = company.filter(item => item.sercive_name.toLowerCase() == searchkey)
         setDisplayProduct(filetered)
         console.log(displayProduct)
     }
@@ -31,7 +31,7 @@ const Search = () => {
             <div>
                 {
                     displayProduct ?
-                        <div>
+                        <div className='search-result-grid'>
                             {
                                     displayProduct.map(product=><CardProduct key={product._id} product={product}></CardProduct>)      
                             }
