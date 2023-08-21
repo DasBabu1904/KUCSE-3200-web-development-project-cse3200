@@ -1,0 +1,41 @@
+{
+    "home": {
+        "description": {
+            "head": "What actually we do?",
+            "text": "Welcome to our innovative e-commerce platform, where finding your ideal developer is effortless.Discover a diverse range of skilled professionalsacross various domains. Compare services, examine portfolios, and read reviews to make informed decisions. Streamline your hiring process and embark on successful collaborations with ease. Your perfect  developer is just a click away",
+            "img": "./search-concept-landing-page.jpg"
+        },
+        "features": {
+            "head": "What you can find here: ",
+            "1": {
+                "head": "Discover Leading Companies",
+                "text": "Explore our Leader Board showcasing top-tier companies in various industries. Uncover industry leaders and innovators who excel in delivering exceptional services."
+            },
+            "2": {
+                "head": "Insightful Customer Reviews and Ratings",
+                "text": "Gain valuable insights from authentic customer reviews and ratings. Get a glimpse into the experiences of others who have engaged with these companies, helping you make confident decisions."
+            },
+            "3": {
+                "head": "Effortless Company Comparison:",
+                "text": "Gain valuable insights from authentic customer reviews and ratings. Get a glimpse into the experiences of others who have engaged with these companies, helping you make confident decisions."
+            }
+        },
+        "whyus": {
+            "1": {
+                "title": "Fast Delivery",
+                "logo": "",
+                "text": "Phasellus eleifend at felis sit amet tincidunt. Praesent ac fringilla nisi. "
+            },
+            "2": {
+                "title": "High Quality",
+                "logo": "",
+                "text": "Praesent ac fringilla nisi, at gravida nisl. Phasellus eleifend at felis sit amet tincidunt. "
+            },
+            "3": {
+                "title": "24/7 Support",
+                "logo": "",
+                "text": "Praesent ac fringilla nisi, at gravida nisl. Ut ornare in arcu ut interdum."
+            }
+        }
+    }
+}

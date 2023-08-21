@@ -1,0 +1,40 @@
+.footer{
+    color: white;
+    background-color: #15A3B7;
+    padding: 20px;
+}
+.Button{
+    height: 50px;
+    width: 150px;
+    border-radius: 50px;
+    background-color:blue;
+    color: white;
+}
+#subscirption-email{
+    height: 60px;
+    width: 500px;
+    background-color: #498E89;
+    border-radius: 5px;
+    border:2px solid #1e4644;
+}
+.news-letter{
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 50px;
+    display: flex;
+    justify-content:space-evenly;
+}
+.newletter-input{
+    display: flex;
+    align-items: center;
+}
+.footer-pera{
+    display: grid;
+    justify-content: left;
+}
+.footer-link-head{
+    display: flex;
+    justify-content: space-around;
+    color: rgba(255, 255, 255, 0.511);
+
+}

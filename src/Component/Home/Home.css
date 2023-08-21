@@ -1,0 +1,77 @@
+.What-we-do-section{
+    margin:20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.Home-description-image{    
+    
+}
+.Home-description-image-img{
+    width: 100%;
+}
+.What-we-do-tex{
+    align-items: center;
+    justify-content: center;
+}
+.card-home{
+    padding: 12px;
+    height: 400px;
+    width: 250px;
+    background-color: #15A3B7;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.home-card-section{
+   margin-left: 50px;
+   margin-right: 50px;
+    grid-template-columns: repeat(4,1fr);
+    display: grid;
+}
+#Icons-in-home-whyus1{
+     margin-left: 200px;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    color: white;
+    background-color: black;
+    padding: 10px;
+}
+#Icons-in-home-whyus2{
+    margin-left: 250px;
+   text-align: center;
+   height: 30px;
+   width: 30px;
+   border-radius: 30px;
+   color: white;
+   background-color: black;
+   padding: 10px;
+}
+#Icons-in-home-whyus3{
+    margin-left: 235px;
+   text-align: center;
+   height: 30px;
+   width: 30px;
+   border-radius: 30px;
+   color: white;
+   background-color: black;
+   padding: 10px;
+}
+.why-us-three-sec{
+    justify-content: center;
+    display: grid
+}
+.why-us-in-home-content{
+    
+    display: flex;
+}
+.why-us-in-home{
+    margin: 20px;
+}
+.why-us-text-in-home{
+    font-weight: bold;
+    font-size: large;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

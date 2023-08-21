@@ -6,6 +6,9 @@ import Home from './Component/Home/Home';
 import Search from './Component/Search/Search';
 import LeaderBoard from './Component/LeaderBoard/LeaderBoard';
 import CompanyList from './Component/CompanyList/CompanyList';
+import { useEffect, useState } from 'react';
+import UserProfile from './Component/UserProfile/UserProfile';
+import Footer from './Component/Footer/Footer';
 
 function App() {
   return (
@@ -16,7 +19,9 @@ function App() {
         <Route path='/search' element={<Search></Search>}></Route>
         <Route path='/leader-board' element={<LeaderBoard></LeaderBoard>}></Route>
         <Route path='/company-list' element={<CompanyList></CompanyList>}></Route>
+        <Route path='/user-profile' element={<UserProfile></UserProfile>}></Route>
      </Routes>
+     <Footer></Footer>
     </div>
   );
 }
