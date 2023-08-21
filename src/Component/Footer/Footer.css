@@ -38,3 +38,43 @@
     color: rgba(255, 255, 255, 0.511);
 
 }
+.footer-links{
+    
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-link{
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+}
+.footer-link-col{
+    display: flex;
+    flex-direction:column ;
+    align-items: baseline;
+}
+.footer-address p{
+    display: grid;
+    align-items: end;
+}
+.footer-links-sec{
+    margin-top: 50px;
+}
+.contact-footer{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    justify-content: space-between;
+    display: flex;
+}
+.fb-ln{
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+.icon-fb-lnin{
+    display: grid;
+    justify-content: left;
+    flex-direction: column;
+}

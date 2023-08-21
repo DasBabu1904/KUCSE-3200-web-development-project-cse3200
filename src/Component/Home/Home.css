@@ -9,6 +9,9 @@
 .Home-description-image-img{
     width: 100%;
 }
+.Home-description-text{
+    font-size: 30px;
+}
 .What-we-do-tex{
     align-items: center;
     justify-content: center;

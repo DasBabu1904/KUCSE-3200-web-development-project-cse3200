@@ -20,8 +20,6 @@ const Home = () => {
     //   const [description, features, whyus]=data.home
     return (
         <div>
-            <h1>This is Home</h1>
-
             {/* description 
 
             <div>
