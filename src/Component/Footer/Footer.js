@@ -20,7 +20,7 @@ const Footer = () => {
                     <div><h1>Sign Up To
                         Our Newsletter.</h1></div>
                     <form onSubmit={handleInfo} action="">
-                        <input type="email" name="email" id="subscirption-email" required />
+                        <input placeholder='Your Email' type="email" name="email" id="subscirption-email" required />
                         <input className="Button" type="submit" value="Subscribe" />
                     </form>
                 </div>

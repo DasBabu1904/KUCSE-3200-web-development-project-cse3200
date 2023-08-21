@@ -9,6 +9,7 @@ import CompanyList from './Component/CompanyList/CompanyList';
 import { useEffect, useState } from 'react';
 import UserProfile from './Component/UserProfile/UserProfile';
 import Footer from './Component/Footer/Footer';
+import CardProduct from './Component/CardProduct/CardProduct';
 
 function App() {
   return (
