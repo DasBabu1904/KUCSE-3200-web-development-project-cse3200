@@ -10,6 +10,8 @@ import { useEffect, useState } from 'react';
 import UserProfile from './Component/UserProfile/UserProfile';
 import Footer from './Component/Footer/Footer';
 import CardProduct from './Component/CardProduct/CardProduct';
+import LogIn from './Component/LogIn/LogIn';
+import Register from './Component/Register/Register';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path='/leader-board' element={<LeaderBoard></LeaderBoard>}></Route>
         <Route path='/company-list' element={<CompanyList></CompanyList>}></Route>
         <Route path='/user-profile' element={<UserProfile></UserProfile>}></Route>
+        <Route path='/log-in' element={<LogIn></LogIn>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
      </Routes>
      <Footer></Footer>
     </div>

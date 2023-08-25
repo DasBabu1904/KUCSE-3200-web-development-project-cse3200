@@ -4,10 +4,12 @@
     grid-template-columns: repeat(2,1fr);
 }
 .Home-description-image{    
-    
+
 }
 .Home-description-image-img{
     width: 100%;
+    height: 400px;
+    width: 400px;
 }
 .Home-description-text{
     font-size: 30px;
