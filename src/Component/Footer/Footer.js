@@ -58,7 +58,7 @@ const Footer = () => {
                             <Link className='fb-ln' onClick={()=>GotoLink('https://www.facebook.com')}><FontAwesomeIcon icon={faLink}></FontAwesomeIcon>FB</Link>
                             <Link className='fb-ln' onClick={()=>GotoLink('https://www.linkedin.com/')}><FontAwesomeIcon icon={faLink}></FontAwesomeIcon>linkedin</Link>
                         </div>
-                        <div className='footer-copy-logo'>Copyright © 2020 Dev campus . Ltd.</div>
+                        <div className='footer-copy-logo'>Copyright © 2023 Dev campus . Ltd.</div>
                     </div>
                 </div>
             </div>
