@@ -8,16 +8,18 @@ const LogIn = () => {
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('')
     const handleLogIn = (event) => {
+        console.log("in the login")
         event.preventDefault()
-        const auth = getAuth();
         signInWithEmailAndPassword(auth, userEmail, userPassword)
             .then((userCredential) => {
                 const user = userCredential.user;
+                console.log(user)
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-            });
+                console.error(errorMessage)
+            })
     }
     const getEmail = (event) => {
         setUserEmail(event.target.value)

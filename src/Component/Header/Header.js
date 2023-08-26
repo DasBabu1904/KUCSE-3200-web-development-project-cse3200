@@ -3,29 +3,40 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 import CustomLink from '../CustomLink/CustomLink';
 import app from '../../firebase/firebase.config';
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-
-const auth = getAuth(app);
-const user = auth.currentUser;
+import { getAuth, onAuthStateChanged, signOut, useAuthState } from "firebase/auth";
+import { FirebaseError } from 'firebase/app';
+const auth = getAuth();
 const Header = () => {
-
-
+    const [user, setUser] = useState(null);
     const [dropClass, setdropClass] = useState('dropdown-content-header')
-    const [user, setUser] = useState({});
+    useEffect(() => {
 
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            const uid = user.uid;
-            setUser(user)
-        } else {
-            console.log("No user is signed in.")
-        }
-    });
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user);
+                console.log("got user\n", user)
+            } else {
+                console.log("no user")
+            }
+        });
 
+    }, [auth])
+
+
+    // onAuthStateChanged(auth, (user) => {
+    //     if (user) {
+    //         const uid = user.uid;
+    //         setUser(user)
+    //     } else {
+    //         console.log("No user is signed in.")
+    //     }
+    // });
+    console.log(user)
     const HandleLogOut = () => {
         console.log("Log out")
         signOut(auth).then(() => {
             console.log("sign out successful")
+            setUser(null)
         }).catch((error) => {
             console.error(error)
         });
@@ -49,23 +60,29 @@ const Header = () => {
 
             {/* onMouseLeave={() => { profileButtonBlur() }} */}
             <div className='header-right' >
-                <button className='Profile-button' onMouseEnter={() => { profileButton() }} >
+                <button className='Profile-button'>
                     <div>
-                        <div className='profile-picture-header'><img className='profile-picture-header' src={user.img}></img></div>
-                        <div className='profile-name-header'>{user.Name}</div>
+                        <div className='profile-picture-header'><img className='profile-picture-header' alt='PP'></img></div>
+                        <div className='profile-name-header'>
+                            {
+                                user ?
+                                    <p>{user.email}</p>
+                                    :
+                                    <h3>
+                                        Name
+                                    </h3>
+                            }
+                        </div>
                     </div>
-                    <div className={dropClass}>
-                        <Link className="header-dropdown-menu" to="/user-profile"> Profile</Link>
-                        <Link className="header-dropdown-menu" to=""> DashBoard</Link>
-                        <Link className="header-dropdown-menu" to=""> Payment Method</Link>
+                    <div >
                         {
                             user ?
-                                <div>
-                                    <h3 className="header-dropdown-menu" to=""> LogOut</h3>
-                                </div>
+                                <button onClick={() => { HandleLogOut() }}>
+                                    <h3 className="header-dropdown-menu"> LogOut</h3>
+                                </button>
                                 :
-                                <div onClick={() => HandleLogOut}>
-                                    <h3 className="header-dropdown-menu" to=""> Log In</h3>
+                                <div >
+                                    <Link className="header-dropdown-menu" to="/log-in"> Log In</Link>
                                 </div>
                         }
                     </div>

@@ -10,10 +10,12 @@
     display: flex;
 }
 .Profile-button{
+  display: flex;
     border-radius: 5px;
     
 }
 .header-right{
+
     align-items: center;
     padding-right: 20px;
     border-radius: 5px;
