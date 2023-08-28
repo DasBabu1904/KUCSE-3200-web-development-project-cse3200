@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './Register.css'
-import { Link } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword , sendEmailVerification } from "firebase/auth";
 import app from '../../firebase/firebase.config';
 const auth = getAuth(app);
 
 const Register = () => {
-
+    const navigate = useNavigate();
     const [info, setInfo] = useState({});
     const [signUpError, setSignUpError] = useState('')
     const handleInfo = (event) => {
@@ -38,6 +38,21 @@ const Register = () => {
                 const errorCode = error.code;
                 setSignUpError(error.message);
             });
+
+        fetch('http://localhost:5000/register', {
+            method: 'POST',
+            headers: { 'content-Type': 'application/json' },
+            body: JSON.stringify(info)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+        // sendEmailVerification(auth.currentUser)
+        //     .then(() => {
+        //       // Email verification sent!
+        //     });
+        navigate('/user-profile');
     }
 
 

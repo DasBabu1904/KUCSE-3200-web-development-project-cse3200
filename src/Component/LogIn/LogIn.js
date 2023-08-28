@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import './LogIn.css';
 import app from '../../firebase/firebase.config';
+import { Link, useNavigate } from 'react-router-dom';
 const auth = getAuth(app);
 
 const LogIn = () => {
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('')
+    const navigate = useNavigate();
     const handleLogIn = (event) => {
         console.log("in the login")
         event.preventDefault()
@@ -20,6 +22,7 @@ const LogIn = () => {
                 const errorMessage = error.message;
                 console.error(errorMessage)
             })
+        navigate('/user-profile')
     }
     const getEmail = (event) => {
         setUserEmail(event.target.value)
@@ -41,6 +44,8 @@ const LogIn = () => {
                 <input className="Button form_submit_Button" type="submit" value="LogIn" />
             </form>
             <hr />
+            <Link className='link-in-bottom-login' to="/register">Not yet registered please register</Link>
+            <Link className='link-in-bottom-login'to='/forget-pass'>Forget Password?</Link>
         </div>
     );
 };

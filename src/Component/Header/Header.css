@@ -55,6 +55,12 @@
     color: white;
     display: block;
   }
+  .log-out-button{
+    padding: 2px;
+    margin: 5px;
+    height: 20px;
+    width: 70px;
+  }
   /* .dropdown-content a {
     color: black;
     padding: 12px 16px;

@@ -16,3 +16,9 @@
     margin-top: 20px;
     font-size: large;
 }
+.link-in-bottom-login{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    margin: 10px;
+}

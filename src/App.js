@@ -12,6 +12,8 @@ import Footer from './Component/Footer/Footer';
 import CardProduct from './Component/CardProduct/CardProduct';
 import LogIn from './Component/LogIn/LogIn';
 import Register from './Component/Register/Register';
+import RequireAuth from './Component/RequireAuth/RequireAuth';
+import ForgetPass from './Component/Forgate-password/ForgetPass';
 
 function App() {
   return (
@@ -19,12 +21,14 @@ function App() {
       <Header></Header>
      <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/search' element={<Search></Search>}></Route>
         <Route path='/leader-board' element={<LeaderBoard></LeaderBoard>}></Route>
         <Route path='/company-list' element={<CompanyList></CompanyList>}></Route>
         <Route path='/user-profile' element={<UserProfile></UserProfile>}></Route>
         <Route path='/log-in' element={<LogIn></LogIn>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/forget-pass' element={<ForgetPass></ForgetPass>}></Route>
      </Routes>
      <Footer></Footer>
     </div>
