@@ -13,8 +13,15 @@ const CardCompnay = (props) => {
     } = companydetail
     return (
         <div className='company-cards'>
-            <h1>Company Name: {name}</h1>
-
+            <h3>Company Name:</h3>
+            <h1> {name}</h1>
+            <p>Employee Number: {employeeNum}</p>
+            <p>services: {services}</p>
+            <p>Company Size {size}</p>
+            <h3>Contact:</h3>
+            <p>Email: {email}</p>
+            <p>Contact Number: {contactNumber}</p>
+            <p>Address: {address}</p>
         </div>
     );
 };

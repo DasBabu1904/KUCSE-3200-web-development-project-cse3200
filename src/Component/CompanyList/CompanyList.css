@@ -1,6 +1,14 @@
-.display-name-blcok{
-    display: block;
-    height: 100px;
-    width: 100px;
-    background-color: blue;
+
+.Company-list-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.grid-company-db-buttons{
+    display: grid;
+    justify-content: center;
+}
+.buttons-conmpany-list-to-nav-database-modifcation{
+    display: grid;
+    align-items: center;
+    width: 200px;
 }
