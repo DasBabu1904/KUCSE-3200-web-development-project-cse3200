@@ -28,7 +28,7 @@ const ForgetPass = () => {
                     :
                     <form className='forget-pass-form' onSubmit={forgetPassword}>
                         <label>Please Give your email address</label><br/>
-                        <input className='forgate-email' name="email"></input>
+                        <input className='forgate-email' name="email"></input><br/>
                         <input className='Button' type='submit'></input>
                     </form>
             }

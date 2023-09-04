@@ -25,7 +25,7 @@ const Register = () => {
         }
         if (info?.password?.length < 6) {
 
-            alert("Password is too small!! you should use more than 6 char")
+            alert("Password is too small!!\n you should use more than 6 char")
             return;
         }
         // console.log(info)

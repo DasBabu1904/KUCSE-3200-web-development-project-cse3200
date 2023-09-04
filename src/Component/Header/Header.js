@@ -45,7 +45,7 @@ const Header = () => {
         <div className='Header-ribon'>
             <div className='header-left'>
                 <CustomLink to="/">Home</CustomLink>
-                <CustomLink to="/search">Search</CustomLink>
+                <CustomLink to="/home/search">Search</CustomLink>
                 <CustomLink to="/leader-board">Leader Borad</CustomLink>
                 <CustomLink to="/company-list">Company List </CustomLink>
             </div>

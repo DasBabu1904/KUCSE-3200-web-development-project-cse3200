@@ -8,15 +8,17 @@ const Search = () => {
     useEffect(() => {
         fetch('fakecompany.json')
             .then(res => res.json())
-            .then(data => setCompany(data))
+            .then(data => console.log(data))
     }, [])
     let searchkey = ''
     const HandleSesarch = (event) => {
         event.preventDefault();
+        console.log(company)
         searchkey = ''
         searchkey = (event.target.keywordsearch.value).toLowerCase()
         const filetered = company.filter(item => item.sercive_name.toLowerCase() == searchkey)
         setDisplayProduct(filetered)
+        
         console.log(displayProduct)
     }
     return (

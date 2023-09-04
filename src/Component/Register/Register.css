@@ -3,7 +3,7 @@
 }
 
 .input-fied-registration-form {
-
+    border-radius: 10px;
     height: 50px;
     width: 500px;
     background-color: rgba(0, 255, 255, 0.122);
