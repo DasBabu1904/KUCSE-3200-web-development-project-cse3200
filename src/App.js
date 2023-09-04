@@ -15,6 +15,8 @@ import Register from './Component/Register/Register';
 import RequireAuth from './Component/RequireAuth/RequireAuth';
 import ForgetPass from './Component/Forgate-password/ForgetPass';
 import AddCompany from './Component/Admin/AddCompany/AddCompany';
+import UpdateCompany from './Component/Admin/UpdateCompany/UpdateCompany';
+import DeleteCompany from './Component/Admin/DeleteCompany/DeleteCompany';
 
 function App() {
   return (
@@ -23,10 +25,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/home/search' element={<Search></Search>}></Route>
-         
-      
-
+        <Route path='/search' element={<Search></Search>}></Route>
         <Route path='/leader-board' element={<LeaderBoard></LeaderBoard>}></Route>
         <Route path='/company-list' element={<CompanyList></CompanyList>}></Route>
         <Route path='/user-profile' element={<UserProfile></UserProfile>}></Route>
@@ -34,6 +33,8 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/forget-pass' element={<ForgetPass></ForgetPass>}></Route>
         <Route path='/add-company' element={<AddCompany></AddCompany>}></Route>
+        <Route path='/update-company' element={<UpdateCompany></UpdateCompany>}></Route>
+        <Route path='/delete-company' element={<DeleteCompany></DeleteCompany>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

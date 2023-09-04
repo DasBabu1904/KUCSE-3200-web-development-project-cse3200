@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './AddCompany.css'
-const AddCompany = () => {
+
+const UpdateCompany = () => {
     const [info, setInfo] = useState({})
     const handleAddCompany = (event) => {
         event.preventDefault()
@@ -13,8 +13,9 @@ const AddCompany = () => {
         info.contactNumber = form.cnumber.value
         info.employeeNum = form.enum.value
         console.log(info)
-        fetch('http://localhost:5000/add-company-to-db', {
-            method: 'POST',
+        setInfo(info)
+        fetch('http://localhost:5000/update-company-details', {
+            method: 'PUT',
             headers: { 'content-Type': 'application/json' },
             body: JSON.stringify(info)
         })
@@ -55,10 +56,10 @@ const AddCompany = () => {
                     <label>employee Number</label>
                     <input name='enum' type='text' required></input>
                 </div>
-                <input className="input-fied-registration-form Button" type="submit" value="Submit" />
+                <input className="input-fied-registration-form Button" type="submit" value="Update" />
             </form>
         </div>
     );
 };
 
-export default AddCompany;
+export default UpdateCompany;

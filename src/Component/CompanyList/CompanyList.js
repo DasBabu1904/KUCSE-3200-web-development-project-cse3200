@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CompanyCard from '../CompanyCard/CompanyCard';
-
+import CardCompnay from '../CardCompnay/CardCompnay';
 const CompanyList = () => {
     const [companyList, setCompanyList] = useState([])
     useEffect(() => {
@@ -12,21 +11,24 @@ const CompanyList = () => {
             .then(res => res.json())
             .then(data => {
                 setCompanyList(data)
-                console.log(data)
             })
     }, [])
 
     return (
         <div>
-            {
-                companyList
-                    ?
-                    companyList.map(company => {
-                        <CompanyCard key={company._id} company={company}></CompanyCard>
-                    })
+            <h1>This is company list:</h1>
+            <div>
+                {
+                    companyList?
+                    <div className='Company-list-grid'>
+                        {
+                            companyList.map(com=><CardCompnay key={com._id} company={com}></CardCompnay>)
+                        }
+                    </div>
                     :
                     <div><h1>Loading...</h1></div>
-            }
+                }
+            </div>
         </div>
     );
 };
