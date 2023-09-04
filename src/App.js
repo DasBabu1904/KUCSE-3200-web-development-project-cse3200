@@ -17,11 +17,13 @@ import ForgetPass from './Component/Forgate-password/ForgetPass';
 import AddCompany from './Component/Admin/AddCompany/AddCompany';
 import UpdateCompany from './Component/Admin/UpdateCompany/UpdateCompany';
 import DeleteCompany from './Component/Admin/DeleteCompany/DeleteCompany';
+import Breadcrumbs from './Component/BreadCums/Breadcrumbs';
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
+      <Breadcrumbs></Breadcrumbs>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>

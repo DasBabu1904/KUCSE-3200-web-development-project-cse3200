@@ -27,33 +27,34 @@ const AddCompany = () => {
     return (
         <div>
             <form onSubmit={handleAddCompany}>
+            <h1>Give the new company Information</h1>
                 <div>
-                    <label>Name</label>
-                    <input name='name' type='text' required></input>
+                    <label>Name</label><br/>
+                    <input className='db-admin-input' name='name' type='text' required></input>
                 </div>
                 <div>
-                    <label>Address</label>
-                    <input name='address' type='text' required></input>
+                    <label>Address</label><br/>
+                    <input className='db-admin-input' name='address' type='text' required></input>
                 </div>
                 <div>
-                    <label>Company Size</label>
-                    <input name='size' type='text' required></input>
+                    <label>Company Size</label><br/>
+                    <input className='db-admin-input' name='size' type='text' required></input>
                 </div>
                 <div>
-                    <label>Services</label>
-                    <input name='services' type='text' required></input>
+                    <label>Services</label><br/>
+                    <input className='db-admin-input' name='services' type='text' required></input>
                 </div>
                 <div>
-                    <label>email</label>
-                    <input name='email' type='text' required></input>
+                    <label>email</label><br/>
+                    <input className='db-admin-input' name='email' type='text' required></input>
                 </div>
                 <div>
-                    <label>Contact Number</label>
-                    <input name='cnumber' type='text' required></input>
+                    <label>Contact Number</label><br/>
+                    <input className='db-admin-input' name='cnumber' type='text' required></input>
                 </div>
                 <div>
-                    <label>employee Number</label>
-                    <input name='enum' type='text' required></input>
+                    <label>employee Number</label><br/>
+                    <input className='db-admin-input' name='enum' type='text' required></input>
                 </div>
                 <input className="input-fied-registration-form Button" type="submit" value="Submit" />
             </form>

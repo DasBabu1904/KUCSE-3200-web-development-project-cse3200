@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './DeleteCompany.css'
 const DeleteCompany = () => {
     const [info, setInfo] = useState({})
     const handleAddCompany = (event) => {
@@ -23,13 +23,14 @@ const DeleteCompany = () => {
     return (
         <div>
             <form onSubmit={handleAddCompany}>
+            <h1>Give the company Information you want to delete</h1>
                 <div>
-                    <label>Name</label>
-                    <input name='name' type='text' required></input>
+                    <label>Name</label><br/>
+                    <input className='db-admin-input' name='name' type='text' required></input>
                 </div>
                 <div>
-                    <label>email</label>
-                    <input name='email' type='text' required></input>
+                    <label>email</label><br/>
+                    <input className='db-admin-input' name='email' type='text' required></input>
                 </div>
                 <input className="input-fied-registration-form Button" type="submit" value="DELETE" />
             </form>
