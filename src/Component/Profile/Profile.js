@@ -1,57 +1,59 @@
-
 import React, { useEffect, useState } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import AdminProfile from '../Admin/AdminProfile/AdminProfile';
-import UserProfile from '../UserProfile/UserProfile';
+import CustomerProfile from '../User/CustomerProfile/CustomerProfile';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Route } from 'react-router-dom';
+
 const auth = getAuth();
+
 const Profile = () => {
     const [user, setUser] = useState(null);
     const [query, setQuery] = useState('');
-    const [UserProfile, setUserProfile] = useState({})
+    const [UserProfile, setUserProfile] = useState({});
+
     useEffect(() => {
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setUser(user);
-                setQuery(user.email)
-
+        onAuthStateChanged(auth, (authUser) => {
+            if (authUser) {
+                setUser(authUser);
+                setQuery(authUser.email);
             } else {
-                //console.log("no user")
+                // Handle the case where the user is not authenticated
             }
         });
-
-    }, [auth])
-
+    }, []);
 
     useEffect(() => {
-        try {
+        if (query) {
             fetch(`http://localhost:5000/get-admin-profile?email=${query}`, {
                 method: 'GET',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify()
+                headers: { 'content-Type': 'application/json' },
             })
-                .then(res => res.json())
-                .then(data => {
-                    setUserProfile(data[0])
-                    console.log(setUserProfile)
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return res.json();
                 })
+                .then((data) => {
+                    console.log(data);
+                    setUserProfile(data[0]);
+                })
+                .catch((error) => {
+                    console.error('Error fetching user profile:', error);
+                    // Handle the error here, e.g., show an error message to the user
+                });
         }
-        catch {
-            console.error("Failed")
-        }
-    }, [])
-
+    }, [query]);
 
     return (
-        <div><h1>This is main profile: {UserProfile?.email}</h1>
-            {UserProfile?.admin === 'true' ?
-                <>
-                    <AdminProfile></AdminProfile>
-                </>
-                :
-                <>
-                    <UserProfile></UserProfile>
-                </>}
+        <div>
+            <h1>This is main profile: {UserProfile?.email}</h1>
+            {UserProfile?.admin === 'true' ? (
+                <AdminProfile admin={UserProfile}/>
+            ) : (
+                <CustomerProfile user={UserProfile}  />
+            )}
         </div>
     );
 };

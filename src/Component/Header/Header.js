@@ -72,7 +72,7 @@ const Header = () => {
                                     <button className='log-out-button header-dropdown-menu' onClick={() => { HandleLogOut() }}>
                                         LogOut
                                     </button>
-                                    <Link className="header-dropdown-menu" to="/user-profile">profile</Link>
+                                    <Link className="header-dropdown-menu" to="/profile">profile</Link>
                                 </div>
                                 :
                                 <div >

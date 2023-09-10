@@ -7,21 +7,36 @@ import Search from './Component/Search/Search';
 import LeaderBoard from './Component/LeaderBoard/LeaderBoard';
 import CompanyList from './Component/CompanyList/CompanyList';
 import { useEffect, useState } from 'react';
-import UserProfile from './Component/UserProfile/UserProfile';
 import Footer from './Component/Footer/Footer';
-import CardProduct from './Component/CardProduct/CardProduct';
 import LogIn from './Component/LogIn/LogIn';
 import Register from './Component/Register/Register';
-import RequireAuth from './Component/RequireAuth/RequireAuth';
 import ForgetPass from './Component/Forgate-password/ForgetPass';
 import AddCompany from './Component/Admin/AddCompany/AddCompany';
 import UpdateCompany from './Component/Admin/UpdateCompany/UpdateCompany';
 import DeleteCompany from './Component/Admin/DeleteCompany/DeleteCompany';
 import Breadcrumbs from './Component/BreadCums/Breadcrumbs';
-import AdminProfile from './Component/Admin/AdminProfile/AdminProfile';
 import Profile from './Component/Profile/Profile';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
+const auth = getAuth();
 
 function App() {
+
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+       
+      } else {
+
+      }
+    });
+
+  }, [auth])
+
+  
   return (
     <div className="App">
       <Header></Header>
@@ -32,7 +47,7 @@ function App() {
         <Route path='/search' element={<Search></Search>}></Route>
         <Route path='/leader-board' element={<LeaderBoard></LeaderBoard>}></Route>
         <Route path='/company-list' element={<CompanyList></CompanyList>}></Route>
-        <Route path='/profile' element={<Profile></Profile>}>
+        <Route path='/profile' element={<Profile user={user}></Profile>}>
           {/* <Route path='/profile/user-profile' element={<UserProfile></UserProfile>}></Route>
           <Route path='/profile/admin-profile' element={<AdminProfile></AdminProfile>}></Route> */}
         </Route>

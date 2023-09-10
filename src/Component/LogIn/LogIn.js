@@ -8,21 +8,24 @@ const auth = getAuth(app);
 const LogIn = () => {
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('')
+    const [user,setUser]=useState('')
     const navigate = useNavigate();
     const handleLogIn = (event) => {
         console.log("in the login")
         event.preventDefault()
         signInWithEmailAndPassword(auth, userEmail, userPassword)
             .then((userCredential) => {
-                const user = userCredential.user;
+                const res = userCredential.user;
+                setUser(res)
                 console.log(user)
+
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.error(errorMessage)
             })
-        navigate('/profile')
+        navigate('/profile',user)
     }
     const getEmail = (event) => {
         setUserEmail(event.target.value)
