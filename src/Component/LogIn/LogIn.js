@@ -22,7 +22,7 @@ const LogIn = () => {
                 const errorMessage = error.message;
                 console.error(errorMessage)
             })
-        navigate('/user-profile')
+        navigate('/profile')
     }
     const getEmail = (event) => {
         setUserEmail(event.target.value)

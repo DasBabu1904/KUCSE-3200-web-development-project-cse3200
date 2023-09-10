@@ -17,12 +17,11 @@ const Search = () => {
                 console.log(data)
                 setDisplayProduct(data)
             })
-        // console.log(company)
-        // searchkey = ''
-        // searchkey = (event.target.keywordsearch.value).toLowerCase()
-        // const filetered = company.filter(item => item.sercive_name.toLowerCase() == searchkey)
-        // setDisplayProduct(filetered)
-        // setDisplayProduct(company)
+        
+        searchkey = ''
+        searchkey = (event.target.keywordsearch.value).toLowerCase()
+        const filetered = displayProduct.filter(item => item.sercive_name == searchkey)
+        setDisplayProduct(filetered)
         console.log(displayProduct)
     }
     return (

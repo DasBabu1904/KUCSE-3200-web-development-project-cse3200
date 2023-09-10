@@ -18,6 +18,8 @@ import AddCompany from './Component/Admin/AddCompany/AddCompany';
 import UpdateCompany from './Component/Admin/UpdateCompany/UpdateCompany';
 import DeleteCompany from './Component/Admin/DeleteCompany/DeleteCompany';
 import Breadcrumbs from './Component/BreadCums/Breadcrumbs';
+import AdminProfile from './Component/Admin/AdminProfile/AdminProfile';
+import Profile from './Component/Profile/Profile';
 
 function App() {
   return (
@@ -30,7 +32,10 @@ function App() {
         <Route path='/search' element={<Search></Search>}></Route>
         <Route path='/leader-board' element={<LeaderBoard></LeaderBoard>}></Route>
         <Route path='/company-list' element={<CompanyList></CompanyList>}></Route>
-        <Route path='/user-profile' element={<UserProfile></UserProfile>}></Route>
+        <Route path='/profile' element={<Profile></Profile>}>
+          {/* <Route path='/profile/user-profile' element={<UserProfile></UserProfile>}></Route>
+          <Route path='/profile/admin-profile' element={<AdminProfile></AdminProfile>}></Route> */}
+        </Route>
         <Route path='/log-in' element={<LogIn></LogIn>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/forget-pass' element={<ForgetPass></ForgetPass>}></Route>

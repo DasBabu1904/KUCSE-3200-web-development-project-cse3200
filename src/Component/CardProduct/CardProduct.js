@@ -2,39 +2,31 @@ import React from 'react';
 import './CardProduct.css';
 import DetailsOfProduct from '../DetailsOfProduct/DetailsOfProduct';
 const CardProduct = (props) => {
-    const product=props.product
-    const {_id
-        ,index
-        ,guid
-        ,isActive
-        ,balance
-        ,ratting
-        ,picture
-        ,sercive_name
-        ,name
-        ,gender
-        ,company
-        ,email
-        ,phone
-        ,address
-        ,about
-        ,registered}=product
-    const GoDetails=()=>{
-        <DetailsOfProduct key={_id} product={product}></DetailsOfProduct>
-    }
+    const company = props.product
+    console.log(company)
+    const {
+        name,
+        address,
+        contactNumber,
+        email,
+        employeeNum,
+        services,
+        size
+    } = company
+    // const GoDetails=()=>{
+    //     <DetailsOfProduct key={_id} product={product}></DetailsOfProduct>
+    // }
     return (
-        <div>
-            <div className='Card-Product'><span>Company Name</span><h1>{company}</h1>
-            <h3>Product: {sercive_name}</h3>
-            <p>Price: {balance}</p>
-            <p>Ratting: {ratting}</p>
-            <p>Active Status{isActive}</p>
-            <p>Majority of Dev in company : {gender}</p>
-            <h3>Contact</h3>
-            <p>Email ID: {email}</p>
-            <p>Phone: {phone}</p>
-            <button className="Button" onClick={()=>{GoDetails()}}>View Details</button>
-            </div>
+        <div className='company-cards'>
+            <h3>Company Name:</h3>
+            <h1> {name}</h1>
+            <p>Employee Number: {employeeNum}</p>
+            <p>services: {services}</p>
+            <p>Company Size {size}</p>
+            <h3>Contact:</h3>
+            <p>Email: {email}</p>
+            <p>Contact Number: {contactNumber}</p>
+            <p>Address: {address}</p>
         </div>
     );
 };

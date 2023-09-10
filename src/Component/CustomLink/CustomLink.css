@@ -15,7 +15,7 @@
 
 .NotActiveLink {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     background-color:#15A3B7;
     font-weight: bold;
 }
