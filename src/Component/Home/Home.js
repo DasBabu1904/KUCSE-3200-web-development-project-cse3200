@@ -8,16 +8,6 @@ import { faUserFriends } from '@fortawesome/free-solid-svg-icons'
 import Footer from '../Footer/Footer';
 const Home = () => {
 
-
-    //    const [data,setData]= useState([])
-    //    useEffect(() =>{
-    //          fetch('home.json')
-    //                 .then(res=>res.json())
-    //                 .then(data=>{setData(data)})
-    //    },[])
-    //     console.log(data)
-
-    //   const [description, features, whyus]=data.home
     return (
         <div>
             {/* description 

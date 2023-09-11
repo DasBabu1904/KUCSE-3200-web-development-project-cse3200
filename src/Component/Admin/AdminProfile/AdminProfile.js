@@ -4,7 +4,7 @@ import AdminProfileDetails from '../AdminProfileDetails/AdminProfileDetails';
 import CompanyListAdmin from './CompanyListAdmin/CompanyListAdmin';
 const AdminProfile = (props) => {
     const admin=props.admin
-    const [secNum,SetSecNum]=useState('')
+    const [secNum,SetSecNum]=useState(1)
     const HandleAdminProfileSection=(secNumpara)=>{
         SetSecNum(secNumpara)
         console.log("called",typeof secNum)

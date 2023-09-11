@@ -51,11 +51,11 @@ const CompanyList = () => {
              Db update buttons  
              -------------------------------------------------------------*/}
              
-            <div className='grid-company-db-buttons'>
+            {/* <div className='grid-company-db-buttons'>
                 <button className='Button buttons-conmpany-list-to-nav-database-modifcation' onClick={handleCompanyUpdate}>Update Company</button>
                 <button className='Button buttons-conmpany-list-to-nav-database-modifcation' onClick={handleCompanyAdd}>Add new Company</button>
                 <button style={{marginBottom:"30px"}} className='Button buttons-conmpany-list-to-nav-database-modifcation' onClick={handleCompanyDelete}>Delete A company </button>
-            </div>
+            </div> */}
 
         </div>
     );
