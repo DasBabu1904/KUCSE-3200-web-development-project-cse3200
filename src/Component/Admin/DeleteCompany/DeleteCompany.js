@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+
 import './DeleteCompany.css'
-const DeleteCompany = () => {
+
+const DeleteCompany = (props) => {
+    console.log(props.event)
     const [info, setInfo] = useState({})
     const handleAddCompany = (event) => {
         event.preventDefault()

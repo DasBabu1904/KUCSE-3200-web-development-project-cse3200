@@ -1,0 +1,12 @@
+.table-companylist-admin{
+    justify-content: center;
+    display: grid;
+}
+.admin-company-delete-button{
+    color: red;
+    cursor: pointer;
+}
+.finish-button-admin{
+    justify-content: center;
+    display: grid;
+}

@@ -1,11 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import './AdminProfile.css'
-const AdminProfile = () => {
+import AdminProfileDetails from '../AdminProfileDetails/AdminProfileDetails';
+import CompanyListAdmin from './CompanyListAdmin/CompanyListAdmin';
+const AdminProfile = (props) => {
+    const admin=props.admin
+    const [secNum,SetSecNum]=useState('')
+    const HandleAdminProfileSection=(secNumpara)=>{
+        SetSecNum(secNumpara)
+        console.log("called",typeof secNum)
+    };
+    console.log(admin)
+    const renderComponent = () => {
+        switch (secNum) {
+          case 1:
+            return <AdminProfileDetails admin={admin} />;
+          case 2:
+            return <CompanyListAdmin></CompanyListAdmin>;
+        //   case 'C':
+        //     return <ComponentC />;
+          default:
+            return null;
+        }
+      };
+    
     return (
-        <div>
-            <h1>THis is admin profile</h1>
+        <div className='admin-profile'>
+
             <div className='Admin-profile-left-col'>
-                
+                <h3 onClick={()=>HandleAdminProfileSection(1)}>Profile Details</h3>
+                <h3 onClick={()=>HandleAdminProfileSection(2)}>Company List</h3>
+                <h3 onClick={()=>HandleAdminProfileSection(3)}>User List</h3>
+                <h3 onClick={()=>HandleAdminProfileSection(4)}>Request Arproval</h3>
+            </div>
+
+            <div className='Admin-profile-rigth-col'>
+                {renderComponent()}
             </div>
         </div>
     );

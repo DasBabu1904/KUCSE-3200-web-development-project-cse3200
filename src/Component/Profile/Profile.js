@@ -3,7 +3,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import AdminProfile from '../Admin/AdminProfile/AdminProfile';
 import CustomerProfile from '../User/CustomerProfile/CustomerProfile';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Route } from 'react-router-dom';
+import './Profile.css'
 
 const auth = getAuth();
 
@@ -48,7 +48,7 @@ const Profile = () => {
 
     return (
         <div>
-            <h1>This is main profile: {UserProfile?.email}</h1>
+            <h1 className='profile-name-in-profile'>Profile Name: {UserProfile?.FullName}</h1>
             {UserProfile?.admin === 'true' ? (
                 <AdminProfile admin={UserProfile}/>
             ) : (

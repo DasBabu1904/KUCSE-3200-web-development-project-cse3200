@@ -1,0 +1,15 @@
+.admin-profile{
+    margin: 0px;
+    display: flex;
+}
+.Admin-profile-left-col{
+    min-height: 600px;
+    color: white;
+    width: 400px;
+    background-color: #15a4b7;
+}
+
+.Admin-profile-rigth-col{
+    width: 100%;
+    background-color: bisque;
+}
