@@ -52,7 +52,7 @@ const Profile = () => {
             {UserProfile?.admin === 'true' ? (
                 <AdminProfile admin={UserProfile}/>
             ) : (
-                <CustomerProfile user={UserProfile}  />
+                <CustomerProfile customer={UserProfile}  />
             )}
         </div>
     );

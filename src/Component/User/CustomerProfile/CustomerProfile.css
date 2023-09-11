@@ -1,0 +1,16 @@
+.Customer-profile-left{
+    min-height: 600px;
+    color: white;
+    width: 400px;
+    background-color: #15a4b7;
+}
+.Customer-profile-right{
+    width: 100%;
+    background-color: bisque;
+}
+.customer-profile-left-col-link{
+    cursor: pointer;
+}
+.customer-profile{
+    display: flex;
+}

@@ -8,7 +8,9 @@
     width: 400px;
     background-color: #15a4b7;
 }
-
+.admin-profile-left-col-link{
+    cursor: pointer;
+}
 .Admin-profile-rigth-col{
     width: 100%;
     background-color: bisque;

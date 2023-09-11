@@ -27,10 +27,10 @@ const AdminProfile = (props) => {
         <div className='admin-profile'>
 
             <div className='Admin-profile-left-col'>
-                <h3 onClick={()=>HandleAdminProfileSection(1)}>Profile Details</h3>
-                <h3 onClick={()=>HandleAdminProfileSection(2)}>Company List</h3>
-                <h3 onClick={()=>HandleAdminProfileSection(3)}>User List</h3>
-                <h3 onClick={()=>HandleAdminProfileSection(4)}>Request Arproval</h3>
+                <h3 onClick={()=>HandleAdminProfileSection(1)} className='admin-profile-left-col-link'>Profile Details</h3>
+                <h3 onClick={()=>HandleAdminProfileSection(2)} className='admin-profile-left-col-link'>Company List</h3>
+                <h3 onClick={()=>HandleAdminProfileSection(3)} className='admin-profile-left-col-link'>User List</h3>
+                <h3 onClick={()=>HandleAdminProfileSection(4)} className='admin-profile-left-col-link'>Request Arproval</h3>
             </div>
 
             <div className='Admin-profile-rigth-col'>
