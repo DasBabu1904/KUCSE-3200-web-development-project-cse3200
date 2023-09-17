@@ -3,12 +3,13 @@ import './AdminProfile.css'
 import AdminProfileDetails from '../AdminProfileDetails/AdminProfileDetails';
 import CompanyListAdmin from './CompanyListAdmin/CompanyListAdmin';
 import AddProduct from '../AddProduct/AddProduct';
+import UserList from '../UserList/UserList';
+import UserListforAdmin from './UserListforAdmin/UserListforAdmin';
 const AdminProfile = (props) => {
     const admin=props.admin
     const [secNum,SetSecNum]=useState(1)
     const HandleAdminProfileSection=(secNumpara)=>{
         SetSecNum(secNumpara)
-        console.log("called",typeof secNum)
     };
     console.log(admin)
     const renderComponent = () => {
@@ -19,6 +20,8 @@ const AdminProfile = (props) => {
             return <CompanyListAdmin></CompanyListAdmin>;
           case 3:
             return <AddProduct></AddProduct>
+          case 4:
+            return <UserListforAdmin></UserListforAdmin>
         //   case 'C':
         //     return <ComponentC />;
           default:
