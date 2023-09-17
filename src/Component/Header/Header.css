@@ -1,67 +1,93 @@
-.Header-ribon{
-    height: 75px;
-    margin: 10px;
-    border-radius: 10px;
-    justify-content: space-between;
-    display: flex;
-    background-color: #15A3B7;
-}
-.header-left{
-    display: flex;
-}
-.Profile-button{
+.Header-ribon {
+  height: 75px;
+  margin: 10px;
+  border-radius: 10px;
+  justify-content: space-between;
   display: flex;
-    border-radius: 5px;
-    
+  background-color: #15A3B7;
 }
-.header-right{
 
-    align-items: center;
-    padding-right: 20px;
-    border-radius: 5px;
-    /* display: flex; */
+.header-left {
+  display: flex;
 }
-.profile-picture-header{
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
-    background-color: aliceblue;
+
+.Profile-button {
+  display: flex;
+  border-radius: 5px;
+
 }
-.profile-name-header{
-    padding-left: 5px;
-    display: grid;
-    align-items: center;
+
+.header-right {
+
+  align-items: center;
+  padding-right: 20px;
+  border-radius: 5px;
+  /* display: flex; */
 }
+
+.p-info {
+  margin: 10px;
+  display: flex;
+}
+
+.profile-picture-header {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: aliceblue;
+}
+
+.profile-name-header {
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-name-header p {
+  margin: 0px;
+  font-size: 18px;
+  color: white;
+  margin: 0px;
+  font-weight: bolder;
+}
+
 .dropdown-content-header {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  .dropdown-content-header-display {
-    display: grid;
-    position: absolute;
-    background-color: rgb(105, 105, 106);
-    min-width: 160px;
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
 
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 2;
-  }
-  .header-dropdown-menu{
-    padding: 7px;
-    text-decoration: none;
-    background-color: rgb(105, 105, 106);  
-    color: white;
-    display: block;
-  }
-  .log-out-button{
-    padding: 2px;
-    margin: 5px;
-    height: 20px;
-    width: 70px;
-  }
-  /* .dropdown-content a {
+.dropdown-content-header-display {
+  display: grid;
+  position: absolute;
+  background-color: rgb(105, 105, 106);
+  min-width: 160px;
+
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.header-dropdown-menu {
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 7px;
+  text-decoration: none;
+  background-color: #00626f;
+  color: white;
+  display: block;
+}
+
+.log-out-button {
+  padding: 2px;
+  margin: 5px;
+  height: 20px;
+  width: 70px;
+}
+
+/* .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;

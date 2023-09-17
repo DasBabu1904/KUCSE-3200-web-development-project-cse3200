@@ -46,7 +46,7 @@ const AddCompany = () => {
                 </div>
                 <div>
                     <label>email</label><br/>
-                    <input className='db-admin-input' name='email' type='text' required></input>
+                    <input className='db-admin-input' name='email' type='email' required></input>
                 </div>
                 <div>
                     <label>Contact Number</label><br/>

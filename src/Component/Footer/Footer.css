@@ -56,7 +56,7 @@
 }
 .footer-address p{
     display: grid;
-    align-items: end;
+    justify-content: start;
 }
 .footer-links-sec{
     margin-top: 50px;

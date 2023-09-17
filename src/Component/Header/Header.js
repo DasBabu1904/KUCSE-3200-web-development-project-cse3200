@@ -53,19 +53,18 @@ const Header = () => {
             {/* onMouseLeave={() => { profileButtonBlur() }} */}
             <div className='header-right' >
                 <div className='Profile-button'>
-                    <div>
+                    <div className='p-info'>
                         <div className='profile-picture-header'><img className='profile-picture-header' alt='PP'></img></div>
                         <div className='profile-name-header'>
                             {
                                 user ?
                                     <p>{user.email}</p>
                                     :
-                                    <h3>
-                                    </h3>
+                                    <></>
                             }
                         </div>
                     </div>
-                    <div >
+                    <div style={{margin: 'auto'}}>
                         {
                             user ?
                                 <div>

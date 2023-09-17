@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './AdminProfile.css'
 import AdminProfileDetails from '../AdminProfileDetails/AdminProfileDetails';
 import CompanyListAdmin from './CompanyListAdmin/CompanyListAdmin';
+import AddProduct from '../AddProduct/AddProduct';
 const AdminProfile = (props) => {
     const admin=props.admin
     const [secNum,SetSecNum]=useState(1)
@@ -16,6 +17,8 @@ const AdminProfile = (props) => {
             return <AdminProfileDetails admin={admin} />;
           case 2:
             return <CompanyListAdmin></CompanyListAdmin>;
+          case 3:
+            return <AddProduct></AddProduct>
         //   case 'C':
         //     return <ComponentC />;
           default:
@@ -29,8 +32,9 @@ const AdminProfile = (props) => {
             <div className='Admin-profile-left-col'>
                 <h3 onClick={()=>HandleAdminProfileSection(1)} className='admin-profile-left-col-link'>Profile Details</h3>
                 <h3 onClick={()=>HandleAdminProfileSection(2)} className='admin-profile-left-col-link'>Company List</h3>
-                <h3 onClick={()=>HandleAdminProfileSection(3)} className='admin-profile-left-col-link'>User List</h3>
-                <h3 onClick={()=>HandleAdminProfileSection(4)} className='admin-profile-left-col-link'>Request Arproval</h3>
+                <h3 onClick={()=>HandleAdminProfileSection(3)} className='admin-profile-left-col-link'>Add Product</h3>
+                <h3 onClick={()=>HandleAdminProfileSection(4)} className='admin-profile-left-col-link'>User List</h3>
+                <h3 onClick={()=>HandleAdminProfileSection(5)} className='admin-profile-left-col-link'>Request Arproval</h3>
             </div>
 
             <div className='Admin-profile-rigth-col'>
