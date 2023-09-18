@@ -5,6 +5,7 @@ import CompanyListAdmin from './CompanyListAdmin/CompanyListAdmin';
 import AddProduct from '../AddProduct/AddProduct';
 import UserList from '../UserList/UserList';
 import UserListforAdmin from './UserListforAdmin/UserListforAdmin';
+import RequestApproval from '../RequestApproval/RequestApproval';
 const AdminProfile = (props) => {
     const admin=props.admin
     const [secNum,SetSecNum]=useState(1)
@@ -22,8 +23,9 @@ const AdminProfile = (props) => {
             return <AddProduct></AddProduct>
           case 4:
             return <UserListforAdmin></UserListforAdmin>
-        //   case 'C':
-        //     return <ComponentC />;
+          case 5:
+            return <RequestApproval>
+            </RequestApproval>
           default:
             return null;
         }
