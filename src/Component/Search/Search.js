@@ -17,7 +17,7 @@ const Search = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                
                 setDisplayProduct(data)
             })
     }

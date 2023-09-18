@@ -1,5 +1,9 @@
-.book-product{
+.book-product-flex{
+    justify-content: space-around;
     display: flex;
+}
+.book-product{
+    background: beige;
 }
 .book-porduct-col-left{
     background-color: rgba(211, 187, 157, 0.527);
@@ -8,4 +12,11 @@
 .book-porduct-col-right{
     background-color: rgba(0, 255, 255, 0.396);
     min-height: 300px;
+}
+.booknow-button{
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: larger;
+    border: none;
+    background-color: #96D4D4;
 }
