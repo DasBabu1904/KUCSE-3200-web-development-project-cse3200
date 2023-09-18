@@ -1,0 +1,11 @@
+.book-product{
+    display: flex;
+}
+.book-porduct-col-left{
+    background-color: rgba(211, 187, 157, 0.527);
+    min-height: 300px;
+}
+.book-porduct-col-right{
+    background-color: rgba(0, 255, 255, 0.396);
+    min-height: 300px;
+}

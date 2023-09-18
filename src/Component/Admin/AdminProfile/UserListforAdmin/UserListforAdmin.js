@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
-
+import React, { useEffect, useState } from 'react';
+import './UserListforAdmin.css'
 const UserListforAdmin = () => {
+    const [users, setUsers] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/get-user-list', {
             method: 'GET',
@@ -9,13 +10,38 @@ const UserListforAdmin = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // setCompanyList(data)
                 console.log(data)
+                setUsers(data)
             })
     }, [])
     return (
-        <div>
-            <h1>User list admin</h1>
+        <div className='admin-user-list-div'>
+            <table className='admin-user-list-table'>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                </tr>
+                {
+                    users ?
+                        <>
+                            {
+                                users.map(user =>
+                                    <tr>
+                                        <td>{user.FullName}</td>
+                                        <td>{user.email}</td>
+                                        <td>{user.MobileNumber}</td>
+                                    </tr>
+                                )
+                            }
+
+                        </>
+                        :
+                        <>
+                            <h1>NO users</h1>
+                        </>
+                }
+            </table>
         </div>
     );
 };

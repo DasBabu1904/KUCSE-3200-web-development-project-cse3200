@@ -2,8 +2,14 @@
     padding-top: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
-    height: 500px;
+    height: 350px;
     width: 300px;
     border-radius: 10px;
     background-color: #15A3B7;
+    color: white;
+}
+.product-details-button{
+    height: 40px;
+    padding-top: 8px;
+    margin: auto;
 }

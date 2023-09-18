@@ -28,7 +28,7 @@ const AddProduct = () => {
             <form onSubmit={handleAddProduct}>
             <h1>Give the new company Information</h1>
                 <div>
-                    <label>Name</label><br/>
+                    <label>Company Name </label><br/>
                     <input className='db-admin-input' name='name' type='text' required></input>
                 </div>
                 <div>
@@ -40,8 +40,12 @@ const AddProduct = () => {
                     <input className='db-admin-input' name='email' type='email' required></input>
                 </div>
                 <div>
-                    <label>Price </label><br/>
+                    <label>Price (IN dollar $) </label><br/>
                     <input className='db-admin-input' name='price' type='number' required></input>
+                </div>
+                <div>
+                    <label>Time Required (In days)</label><br/>
+                    <input className='db-admin-input' name='time' type='text' required></input>
                 </div>
                 <input className="input-fied-registration-form Button" type="submit" value="Submit" />
             </form>

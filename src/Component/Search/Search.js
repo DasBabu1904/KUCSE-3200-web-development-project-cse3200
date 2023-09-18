@@ -4,10 +4,13 @@ import CardProduct from '../CardProduct/CardProduct';
 
 const Search = () => {
     const [displayProduct, setDisplayProduct] = useState([])
-    let searchkey = ''
+
     const HandleSesarch = (event) => {
         event.preventDefault();
-        fetch('http://localhost:5000/get-company-list', {
+        const searchkey =(event.target.keywordsearch.value).toLowerCase()
+     
+        console.log(searchkey)
+        fetch(`http://localhost:5000/get-product-list?productName=${searchkey}`, {
             method: 'GET',
             headers: { 'content-Type': 'application/json' },
             body: JSON.stringify()
@@ -17,12 +20,6 @@ const Search = () => {
                 console.log(data)
                 setDisplayProduct(data)
             })
-        
-        searchkey = ''
-        searchkey = (event.target.keywordsearch.value).toLowerCase()
-        const filetered = displayProduct.filter(item => item.sercive_name == searchkey)
-        setDisplayProduct(filetered)
-        console.log(displayProduct)
     }
     return (
         <div>

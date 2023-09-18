@@ -17,6 +17,7 @@ import DeleteCompany from './Component/Admin/DeleteCompany/DeleteCompany';
 import Breadcrumbs from './Component/BreadCums/Breadcrumbs';
 import Profile from './Component/Profile/Profile';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import BookProduct from './Component/BookProduct/BookProduct';
 
 const auth = getAuth();
 
@@ -47,6 +48,7 @@ function App() {
         <Route path='/search' element={<Search></Search>}></Route>
         <Route path='/leader-board' element={<LeaderBoard></LeaderBoard>}></Route>
         <Route path='/company-list' element={<CompanyList></CompanyList>}></Route>
+        <Route path='/book-product' element={<BookProduct></BookProduct>}></Route>
         <Route path='/profile' element={<Profile user={user}></Profile>}>
           {/* <Route path='/profile/user-profile' element={<UserProfile></UserProfile>}></Route>
           <Route path='/profile/admin-profile' element={<AdminProfile></AdminProfile>}></Route> */}

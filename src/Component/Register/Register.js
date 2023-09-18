@@ -19,6 +19,7 @@ const Register = () => {
         info.MobileNumber = form.MobileNumber.value;
         info.Institution = form.Institution.value;
         info.address = form.address.value;
+        info.admin='false';
         if (info.password !== info.confPassword) {
             alert("Your tow password is different ")
             return;
