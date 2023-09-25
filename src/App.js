@@ -18,6 +18,8 @@ import Breadcrumbs from './Component/BreadCums/Breadcrumbs';
 import Profile from './Component/Profile/Profile';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import BookProduct from './Component/BookProduct/BookProduct';
+import ProcedPayment from './Component/ProcedPayment/ProcedPayment';
+import PaymentSuccess from './Component/ProcedPayment/PaymentSuccess/PaymentSuccess';
 
 const auth = getAuth();
 
@@ -59,6 +61,8 @@ function App() {
         <Route path='/add-company' element={<AddCompany></AddCompany>}></Route>
         <Route path='/update-company' element={<UpdateCompany></UpdateCompany>}></Route>
         <Route path='/delete-company' element={<DeleteCompany></DeleteCompany>}></Route>
+        <Route path='/payment-proced' element={<ProcedPayment></ProcedPayment>}></Route>
+        <Route path='/payment/success' element={<PaymentSuccess></PaymentSuccess>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

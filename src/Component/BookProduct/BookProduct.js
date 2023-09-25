@@ -60,10 +60,12 @@ const BookProduct = () => {
         const conf=window.confirm("Are you sure you want to book? ")
         if(conf){
             const orderInfo={
+                customerEmail:user.email,
                 productName:productName,
                 companyEmail:email,
                 id:product._id,
-                orderBy:user.email
+                orderBy:user.email,
+                price:price
             }
 
             fetch('http://localhost:5000/place-order', {

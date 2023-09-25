@@ -43,6 +43,7 @@ const RequestApproval = () => {
                         <th>Price</th>
                         <th>Aproval</th>
                         <th>Status</th>
+                        
                     </tr>
                     {
                         Orders ?
@@ -54,6 +55,7 @@ const RequestApproval = () => {
                                             <td>{order.companyEmail}</td>
                                             <td onClick={() => wantToapprove(order)}>{order.approval}</td>
                                             <td>{order.status}</td>
+                                            
                                         </tr>
                                     )
                                 }

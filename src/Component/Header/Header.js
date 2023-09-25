@@ -22,7 +22,6 @@ const Header = () => {
         });
 
     }, [auth])
-    console.log(user)
     const HandleLogOut = () => {
         console.log("Log out")
         signOut(auth).then(() => {

@@ -36,7 +36,7 @@ const Profile = () => {
                     return res.json();
                 })
                 .then((data) => {
-                    console.log(data);
+                    //console.log(data);
                     setUserProfile(data[0]);
                 })
                 .catch((error) => {
