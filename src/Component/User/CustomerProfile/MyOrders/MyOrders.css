@@ -2,3 +2,13 @@
     justify-content: center;
     display: grid;
 }
+.proceed-payment-button{
+    cursor:grab;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 7px;
+    text-decoration: none;
+    background-color: #00626f;
+    color: white;
+    display: block;
+}

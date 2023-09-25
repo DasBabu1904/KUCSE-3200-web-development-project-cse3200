@@ -65,7 +65,8 @@ const BookProduct = () => {
                 companyEmail:email,
                 id:product._id,
                 orderBy:user.email,
-                price:price
+                price:price,
+                payment:'false'
             }
 
             fetch('http://localhost:5000/place-order', {

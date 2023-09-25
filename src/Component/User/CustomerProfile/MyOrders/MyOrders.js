@@ -34,14 +34,14 @@ const MyOrders = (porps) => {
                 setOrders(data)
                 // console.log(Orders)
             })
-    }, [])
+    }, [Orders])
 
     const handleProcedePayment = (order) => {
-        
+
         fetch(`http://localhost:5000/poreced-payment?id=${order._id}`, {
             // mode: 'no-cors',
             method: 'POST',
-            headers: { "content-type":"application/json" },
+            headers: { "content-type": "application/json" },
             // body: JSON.stringify()
         })
             .then(res => res.json())
@@ -50,7 +50,7 @@ const MyOrders = (porps) => {
                 console.log(data)
                 window.location.replace(data.url)
             })
-            // .catch(error => console.error(error));
+        // .catch(error => console.error(error));
     }
     return (
         <div>
@@ -76,13 +76,23 @@ const MyOrders = (porps) => {
                                             <td>{order.status}</td>
                                             {
                                                 // console.log(order.approval )
-                                                order.approval == "true" ?
+                                                order?.payment == "false" ?
                                                     <>
-                                                        
-                                                        <td onClick={() => handleProcedePayment(order)}>Proced Payment</td>
+                                                        {
+                                                            order.approval == "true" ?
+                                                                <>
+
+                                                                    <td className='proceed-payment-button' onClick={() => handleProcedePayment(order)}>Proced Payment</td>
+                                                                </>
+                                                                :
+                                                                <>
+                                                                    <td>Not Aproved</td>
+                                                                </>
+                                                        }
                                                     </>
                                                     :
                                                     <>
+                                                        <td>Paid</td>
                                                     </>
                                             }
                                         </tr>

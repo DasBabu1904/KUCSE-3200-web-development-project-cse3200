@@ -13,12 +13,12 @@ const RequestApproval = () => {
                 setOrders(data)
                 // console.log(Orders)
             })
-    }, [])
+    }, [Orders])
 
     const wantToapprove = (order) => {
         const conf = window.confirm("Are you sure you want to Aprove? ")
         if (conf) {
-            order.approval='true'
+            order.approval = 'true'
             console.log(order)
 
             fetch('http://localhost:5000/update-order-approval', {
@@ -43,7 +43,7 @@ const RequestApproval = () => {
                         <th>Price</th>
                         <th>Aproval</th>
                         <th>Status</th>
-                        
+
                     </tr>
                     {
                         Orders ?
@@ -53,9 +53,21 @@ const RequestApproval = () => {
                                         <tr>
                                             <td>{order.productName}</td>
                                             <td>{order.companyEmail}</td>
-                                            <td onClick={() => wantToapprove(order)}>{order.approval}</td>
+                                            {
+                                                order.approval == "false" ?
+                                                    <>
+                                                        <td className='Admin-company-list-not-aprrove'
+                                                            onClick={() => wantToapprove(order)}>
+                                                            {order.approval}
+                                                        </td>
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <td className='Admin-company-list-aprrove'>{order.approval}</td>
+                                                    </>
+                                            }
                                             <td>{order.status}</td>
-                                            
+
                                         </tr>
                                     )
                                 }

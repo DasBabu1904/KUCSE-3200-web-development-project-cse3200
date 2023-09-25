@@ -24,8 +24,7 @@ const AdminProfile = (props) => {
           case 4:
             return <UserListforAdmin></UserListforAdmin>
           case 5:
-            return <RequestApproval>
-            </RequestApproval>
+            return <RequestApproval> </RequestApproval>
           default:
             return null;
         }
