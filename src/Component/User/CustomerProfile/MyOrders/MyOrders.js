@@ -24,7 +24,6 @@ const MyOrders = (porps) => {
 
     useEffect(() => {
         fetch(`http://localhost:5000/get-user-oder-list?orderBy=${customer.email}`, {
-
             method: 'GET',
             headers: { 'content-Type': 'application/json' },
             body: JSON.stringify()

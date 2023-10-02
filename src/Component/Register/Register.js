@@ -1,14 +1,48 @@
 import React, { useState } from 'react';
 import './Register.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword , sendEmailVerification } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import app from '../../firebase/firebase.config';
-const auth = getAuth(app);
+import axios from 'axios';
 
+const Image_API = "184bd93e78d8ced740e96c7237144bac"
+const auth = getAuth(app);
+const imageUploadUrl = `https://api.imgbb.com/1/upload?key=869dd73cc280eb17249d54c62cb8326e`
 const Register = () => {
     const navigate = useNavigate();
     const [info, setInfo] = useState({});
     const [signUpError, setSignUpError] = useState('')
+    const [profilePic, setProfilePic] = useState(null)
+
+
+    const handleProfilePicChange =  (event) => {
+        try {
+            const file = event.target.files[0];
+            setProfilePic(file);
+            console.log("hit")
+            const formData = new FormData();
+            formData.append('image', file);
+
+            fetch(imageUploadUrl, {
+                method: 'POST',
+                body: formData,
+            })
+            .then(res=>res.json())
+            .then(resp=>console.log(resp))
+
+            // if (response.ok) {
+            //     const imgRes = await response.json();
+            //     console.log('Image Upload Response:', imgRes);
+
+            // } else {
+            //     console.error('Error uploading image:', response.status, response.statusText);
+            // }
+        } catch (error) {
+            console.error('Error uploading image:', error);
+        }
+    };
+
+
     const handleInfo = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -19,7 +53,7 @@ const Register = () => {
         info.MobileNumber = form.MobileNumber.value;
         info.Institution = form.Institution.value;
         info.address = form.address.value;
-        info.admin='false';
+        info.admin = 'false';
         if (info.password !== info.confPassword) {
             alert("Your tow password is different ")
             return;
@@ -101,6 +135,13 @@ const Register = () => {
                                     <input className="input-fied-registration-form" placeholder='Address' type="text" name="address" id="" required />
                                 </div>
 
+                                <label htmlFor="imageInput">Select an Image:</label>
+                                <input
+                                    type="file"
+                                    id="imageInput"
+                                    accept="image/*" // Limit to image files only
+                                    onChange={handleProfilePicChange}
+                                />
                                 {/* This is the submit button */}
                                 <input className="input-fied-registration-form Button" type="submit" value="Sign Up" />
 

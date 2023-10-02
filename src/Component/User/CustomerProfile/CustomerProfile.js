@@ -4,6 +4,7 @@ import CustomerProfileBasicInfo from './CustomerProfileBasicInfo/CustomerProfile
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentAlt, faCommentDollar, faUser } from '@fortawesome/free-solid-svg-icons';
 import MyOrders from './MyOrders/MyOrders';
+import PaymentHistory from './PaymentHistory/PaymentHistory';
 const CustomerProfile = (props ) => {
     const customer=props.customer;
     const [pageNo,setPageNo]=useState(1)
@@ -16,8 +17,8 @@ const CustomerProfile = (props ) => {
                 return <CustomerProfileBasicInfo customer={customer}></CustomerProfileBasicInfo>
             case 2 :
                 return <MyOrders  customer={customer}></MyOrders>
-            // case 3 :
-            //     return 
+            case 3 :
+                return <PaymentHistory customer={customer}></PaymentHistory>
             // case 4 :
             //     return 
             default :
