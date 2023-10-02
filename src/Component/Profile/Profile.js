@@ -3,29 +3,32 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import AdminProfile from '../Admin/AdminProfile/AdminProfile';
 import CustomerProfile from '../User/CustomerProfile/CustomerProfile';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useParams } from 'react-router-dom';
 import './Profile.css'
 
 const auth = getAuth();
 
 const Profile = () => {
-    const [user, setUser] = useState(null);
+    const { user } = useParams();
+    const [user2, setUser] = useState(null);
     const [query, setQuery] = useState('');
     const [UserProfile, setUserProfile] = useState({});
 
-    useEffect(() => {
-        onAuthStateChanged(auth, (authUser) => {
+    useEffect( () => {
+         onAuthStateChanged(auth, (authUser) => {
             if (authUser) {
                 setUser(authUser);
                 setQuery(authUser.email);
+              
             } else {
                 // Handle the case where the user is not authenticated
             }
         });
     }, []);
-
-    useEffect(() => {
+   
+    useEffect( () => {
         if (query) {
-            fetch(`http://localhost:5000/get-admin-profile?email=${query}`, {
+             fetch(`http://localhost:5000/get-admin-profile?email=${query}`, {
                 method: 'GET',
                 headers: { 'content-Type': 'application/json' },
             })
@@ -38,6 +41,7 @@ const Profile = () => {
                 .then((data) => {
                     //console.log(data);
                     setUserProfile(data[0]);
+                 
                 })
                 .catch((error) => {
                     console.error('Error fetching user profile:', error);

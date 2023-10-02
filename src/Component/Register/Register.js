@@ -15,35 +15,14 @@ const Register = () => {
     const [profilePic, setProfilePic] = useState(null)
 
 
-    const handleProfilePicChange =  (event) => {
-        try {
-            const file = event.target.files[0];
-            setProfilePic(file);
-            console.log("hit")
-            const formData = new FormData();
-            formData.append('image', file);
+    const handleProfilePicChange = (event) => {
+        const file = event.target.files[0];
+        setProfilePic(file);
 
-            fetch(imageUploadUrl, {
-                method: 'POST',
-                body: formData,
-            })
-            .then(res=>res.json())
-            .then(resp=>console.log(resp))
-
-            // if (response.ok) {
-            //     const imgRes = await response.json();
-            //     console.log('Image Upload Response:', imgRes);
-
-            // } else {
-            //     console.error('Error uploading image:', response.status, response.statusText);
-            // }
-        } catch (error) {
-            console.error('Error uploading image:', error);
-        }
     };
 
 
-    const handleInfo = (event) => {
+    const handleInfo = async (event) => {
         event.preventDefault();
         const form = event.target;
         info.email = form.email.value;
@@ -64,6 +43,7 @@ const Register = () => {
             return;
         }
         // console.log(info)
+        //creatin user
         createUserWithEmailAndPassword(auth, info.email, info.password)
             .then((userCredential) => {
                 const user = userCredential.user;
@@ -74,6 +54,28 @@ const Register = () => {
                 setSignUpError(error.message);
             });
 
+        ///uploadin image
+        try {
+            const formData = new FormData();
+            formData.append('image', profilePic);
+
+            await fetch(imageUploadUrl, {
+                method: 'POST',
+                body: formData,
+            })
+                .then(res => res.json())
+                .then(response => {
+                    console.log(response)
+                    info.ViewProfilePicUrl=response.data.display_url
+                    info.DeleteProfilePicUrl=response.data.delete_url
+                    console.log(info)
+                })
+
+        } catch (error) {
+            console.error('Error uploading image:', error);
+        }
+
+        // sent data to database
         fetch('http://localhost:5000/register', {
             method: 'POST',
             headers: { 'content-Type': 'application/json' },
@@ -81,8 +83,11 @@ const Register = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(info)
                 console.log(data)
             })
+
+
         // sendEmailVerification(auth.currentUser)
         //     .then(() => {
         //       // Email verification sent!
@@ -134,14 +139,25 @@ const Register = () => {
                                     <label htmlFor="">Address</label><br />
                                     <input className="input-fied-registration-form" placeholder='Address' type="text" name="address" id="" required />
                                 </div>
+                                <div className="Imageinput-filed input_group-register">
+                                    <div className='image-group-input'>
+                                        <label htmlFor="imageInput">Upload Your Profile Picture:</label>
+                                        <br />
 
-                                <label htmlFor="imageInput">Select an Image:</label>
-                                <input
-                                    type="file"
-                                    id="imageInput"
-                                    accept="image/*" // Limit to image files only
-                                    onChange={handleProfilePicChange}
-                                />
+                                        <input
+                                            placeholder='Profile Picture'
+                                            name="Profile Picture"
+                                            required
+                                            type="file"
+                                            id="imageInput"
+                                            accept="image/*" // Limit to image files only
+                                            onChange={handleProfilePicChange}
+                                        />
+                                    </div>
+                                </div>
+
+
+
                                 {/* This is the submit button */}
                                 <input className="input-fied-registration-form Button" type="submit" value="Sign Up" />
 

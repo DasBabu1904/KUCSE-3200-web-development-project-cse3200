@@ -15,3 +15,42 @@
     background-color: #454565;
     color: white;
 }
+/* .Imageinput-filed{
+    width: 300px;
+    height: 20px;
+    color: blueviolet;
+} */
+/* Styling for Chrome and Edge */
+input[type="file"]::-webkit-file-upload-button {
+    width: 100px;
+    height: 20px;
+    background-color: #007bff;
+    color: #fff;
+    /* padding: 8px 16px; */
+    border: 5px solid #007bff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Styling for Firefox
+  input[type="file"]::-moz-focus-inner {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+
+  input[type="file"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  } */
+
+.image-group-input{
+    border-radius: 5px;
+    background: seashell;
+    margin: auto;
+    width: 500px;
+}
