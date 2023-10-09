@@ -33,6 +33,25 @@ const RequestApproval = () => {
                 })
         }
     }
+
+    const wantToComplete = (order) => {
+        const conf = window.confirm("Are you sure you want to Aprove? ")
+        if (conf) {
+            order.status = 'complete'
+            console.log(order)
+
+            fetch('http://localhost:5000/update-order-status', {
+                method: 'PUT',
+                headers: { 'content-Type': 'application/json' },
+                body: JSON.stringify(order)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    alert("Order data Updated")
+                })
+        }
+    }
     return (
         <div>
             <h1>This are the order request:</h1>
@@ -66,7 +85,19 @@ const RequestApproval = () => {
                                                         <td className='Admin-company-list-aprrove'>{order.approval}</td>
                                                     </>
                                             }
-                                            <td>{order.status}</td>
+                                            
+                                            {
+                                                order.status=='Incomplete'?
+                                                <>
+                                                        <td className='Admin-company-list-not-aprrove'
+                                                    onClick={() => wantToComplete(order)}>{order.status}
+                                                </td>
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <td className='Admin-company-list-aprrove'>{order.status}</td>
+                                                    </>
+                                            }
 
                                         </tr>
                                     )

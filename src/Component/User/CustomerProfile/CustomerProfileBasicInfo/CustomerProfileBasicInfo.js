@@ -1,7 +1,10 @@
 import React from 'react';
 import './CustomerProfileBasicInfo.css'
+import { Button } from 'bootstrap';
+import { useNavigate } from 'react-router-dom';
 const CustomerProfileBasicInfo = (props) => {
     const customer = props.customer
+    const navigate = useNavigate();
     console.log(customer)
     const {
         FullName,
@@ -11,6 +14,10 @@ const CustomerProfileBasicInfo = (props) => {
         address
     } = customer
 
+    const handleEditProfile=()=>{
+        //console.log("edit")
+        navigate('/edit-user-profile',customer)
+    }
 
     return (
         <div className='customer-profile-details'>
@@ -51,6 +58,9 @@ const CustomerProfileBasicInfo = (props) => {
 
                 </div>
                 <div>{FullName}</div>
+            </div>
+            <div>
+                <button className='Edit-profile-button' onClick={handleEditProfile}>Edit Prifile</button>
             </div>
         </div>
     );

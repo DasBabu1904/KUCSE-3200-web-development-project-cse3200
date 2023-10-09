@@ -1,0 +1,28 @@
+.Company-Name-in-review{
+    color: #15A3B7;
+}
+
+.review-input-class{
+    border: 2px solid #15A3B7;
+    color: black;
+    height: 100px;
+    width: 1000px;
+    background-color: #96d4d466;
+}
+
+.review-submit-profile-button {
+    font-size: large;
+    font-weight: 600;
+    color: white;
+    margin: 5px;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    background-color: #15a4b7;
+    margin-bottom: 200px;
+    
+  }
+  
+  .review-submit-profile-button:hover{
+    background-color: #1294a5;
+  }

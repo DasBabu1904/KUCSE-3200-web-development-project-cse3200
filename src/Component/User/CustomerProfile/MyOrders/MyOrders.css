@@ -12,3 +12,16 @@
     color: white;
     display: block;
 }
+.review-button-onuserprofile{
+    margin: 5px;
+    border: none;
+    background-color: #15a4b7;
+    border-radius: 2px;
+    padding: 5px;
+    color: white;
+}
+.review-button-onuserprofile:hover{
+    background-color: #025965;
+    cursor: pointer;
+}
+  

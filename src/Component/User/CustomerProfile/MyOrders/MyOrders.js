@@ -51,6 +51,12 @@ const MyOrders = (porps) => {
             })
         // .catch(error => console.error(error));
     }
+
+    const goToReview=(order)=>{
+      console.log("hit")
+      navigate('/review-give',{state:order})
+
+    }
     return (
         <div>
             <h1>Here is your orders</h1>
@@ -72,7 +78,18 @@ const MyOrders = (porps) => {
                                             <td>{order.productName}</td>
                                             <td>{order.companyEmail}</td>
                                             <td>{order.approval}</td>
-                                            <td>{order.status}</td>
+                                            {
+                                                order?.status == "complete" ?
+                                                    <>
+                                                        <td>{order.status}<p onClick={()=>goToReview(order)} className='review-button-onuserprofile'>
+                                                            Review</p>
+                                                            </td>
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <td>{order.status}</td>
+                                                    </>
+                                            }
                                             {
                                                 // console.log(order.approval )
                                                 order?.payment == "false" ?

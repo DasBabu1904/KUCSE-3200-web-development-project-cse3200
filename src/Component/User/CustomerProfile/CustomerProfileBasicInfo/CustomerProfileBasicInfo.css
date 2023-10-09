@@ -36,3 +36,19 @@ td {
   height: 200px;
   border-radius: 100px;
 }
+
+.Edit-profile-button {
+  font-size: large;
+  font-weight: 600;
+  color: white;
+  margin: 5px;
+  border-radius: 3px;
+  border: none;
+  padding: 10px;
+  background-color: #15a4b7;
+  
+}
+
+.Edit-profile-button:hover{
+  background-color: #1294a5;
+}
